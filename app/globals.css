@@ -23,6 +23,8 @@
      */
     --brand-primary: #000000;
     --brand-accent: #ffffff;
+    --brand-primary-soft: color-mix(in srgb, #000000 14%, transparent);
+    --brand-primary-line: color-mix(in srgb, #000000 35%, transparent);
   }
 
   * {

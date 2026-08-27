@@ -13,8 +13,6 @@ import { Button } from "@/components/ui/button";
 import { navItems } from "@/components/layout/nav-items";
 import { productConfig } from "@/config/product";
 
-const SUPPORT_EMAIL = "contacto@lenguajeobediencia.online";
-
 interface SideMenuProps {
   open: boolean;
   onClose: () => void;
@@ -36,7 +34,7 @@ export function SideMenu({ open, onClose }: SideMenuProps) {
   }
 
   async function handleCopy() {
-    await navigator.clipboard.writeText(SUPPORT_EMAIL);
+    await navigator.clipboard.writeText(productConfig.supportEmail);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }
@@ -154,12 +152,9 @@ export function SideMenu({ open, onClose }: SideMenuProps) {
               ¿Tienes alguna duda o problema? Escríbenos al correo y te responderemos a la brevedad.
             </p>
 
-            <div
-              className="flex items-center justify-between rounded-xl px-4 py-3"
-              style={{ backgroundColor: "color-mix(in srgb, #F2B705 12%, transparent)" }}
-            >
-              <span className="text-sm font-medium" style={{ color: "#B38600" }}>
-                {SUPPORT_EMAIL}
+            <div className="flex items-center justify-between rounded-xl bg-primary-soft px-4 py-3">
+              <span className="text-sm font-medium text-primary">
+                {productConfig.supportEmail}
               </span>
               <button
                 onClick={handleCopy}
@@ -168,7 +163,7 @@ export function SideMenu({ open, onClose }: SideMenuProps) {
               >
                 {copied
                   ? <Check className="h-4 w-4 text-green-500" />
-                  : <Copy className="h-4 w-4" style={{ color: "#B38600" }} />
+                  : <Copy className="h-4 w-4 text-primary" />
                 }
               </button>
             </div>

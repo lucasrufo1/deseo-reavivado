@@ -6,9 +6,13 @@ import { productConfig } from "@/config/product";
  * Config-driven PWA manifest. Next.js serves this at /manifest.webmanifest.
  * All identity values come from productConfig so nothing is hardcoded.
  *
- * The icon (/public/icons/icon.png) must exist and be at least 512x512 for the
- * browser to consider the app installable (otherwise `beforeinstallprompt` never
- * fires and the install button stays hidden).
+ * A 512x512 icon must exist for the browser to consider the app installable
+ * (otherwise `beforeinstallprompt` never fires and the install button stays
+ * hidden). These are opaque on purpose: a transparent home-screen icon renders
+ * against whatever the OS puts behind it. The maskable variant keeps the mark
+ * inside the safe zone so Android's squircle crop never clips it.
+ *
+ * Icon roles: icon.webp = header mark, logo.* = full logo (login screen).
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -21,19 +25,19 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: productConfig.backgroundColor,
     icons: [
       {
-        src: "/icons/icon.png",
+        src: "/icons/icon-192.png",
         sizes: "192x192",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: "/icons/icon.png",
+        src: "/icons/icon-512.png",
         sizes: "512x512",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: "/icons/icon.png",
+        src: "/icons/icon-maskable-512.png",
         sizes: "512x512",
         type: "image/png",
         purpose: "maskable",

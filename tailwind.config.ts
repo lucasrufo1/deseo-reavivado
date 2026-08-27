@@ -27,6 +27,9 @@ const config: Config = {
         primary: {
           DEFAULT: "var(--brand-primary)",
           foreground: "var(--brand-accent)",
+          // Derived tints (see brandThemeStyle in app/layout.tsx).
+          soft: "var(--brand-primary-soft)",
+          line: "var(--brand-primary-line)",
         },
         accent: {
           DEFAULT: "var(--brand-accent)",

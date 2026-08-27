@@ -40,10 +40,9 @@ export default function ContentPage() {
             href={pdfUrl}
             download
             aria-label="Descargar PDF"
-            className="flex h-8 w-8 items-center justify-center rounded-sm"
-            style={{ backgroundColor: "color-mix(in srgb, #F2B705 15%, transparent)" }}
+            className="flex h-8 w-8 items-center justify-center rounded-sm bg-primary-soft"
           >
-            <Download className="h-5 w-5" style={{ color: "#B38600" }} aria-hidden="true" />
+            <Download className="h-5 w-5 text-primary" aria-hidden="true" />
           </a>
         )}
       </div>

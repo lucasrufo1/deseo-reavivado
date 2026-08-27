@@ -52,8 +52,7 @@ export default function LoginPage() {
         {isInstallable && (
           <button
             onClick={handleInstall}
-            className="mb-6 flex items-center gap-1.5 rounded-lg px-4 py-3 text-xs font-bold uppercase tracking-widest backdrop-blur-sm"
-            style={{ backgroundColor: "color-mix(in srgb, #F2B705 18%, transparent)", color: "#B38600", border: "1px solid color-mix(in srgb, #F2B705 35%, transparent)" }}
+            className="mb-6 flex items-center gap-1.5 rounded-lg border border-primary-line bg-primary-soft px-4 py-3 text-xs font-bold uppercase tracking-widest text-primary backdrop-blur-sm"
           >
             <Download className="h-3.5 w-3.5" aria-hidden="true" />
             Instalar la app

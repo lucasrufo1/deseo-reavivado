@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 
 import "./globals.css";
 import { productConfig } from "@/config/product";
@@ -27,7 +26,18 @@ export const viewport: Viewport = {
  * This is what keeps identity out of individual components.
  */
 function brandThemeStyle() {
-  return `:root{--brand-primary:${productConfig.primaryColor};--brand-accent:${productConfig.accentColor};}`;
+  const p = productConfig.primaryColor;
+  return (
+    `:root{` +
+    `--brand-primary:${p};` +
+    `--brand-accent:${productConfig.accentColor};` +
+    // Derived tints used for highlighted affordances (icon chips, callout boxes,
+    // outlined buttons). Deriving them here keeps every surface on-brand when
+    // primaryColor changes — no component ever hardcodes a hex.
+    `--brand-primary-soft:color-mix(in srgb, ${p} 14%, transparent);` +
+    `--brand-primary-line:color-mix(in srgb, ${p} 35%, transparent);` +
+    `}`
+  );
 }
 
 /**
@@ -62,20 +72,6 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: PWA_CAPTURE_SCRIPT }} />
       </head>
       <body className="min-h-dvh">{children}</body>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-N3PFN564FC" strategy="afterInteractive" />
-      <Script id="ga4" strategy="afterInteractive">{`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-N3PFN564FC');
-      `}</Script>
-      <Script id="clarity" strategy="afterInteractive">{`
-        (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "xg7drd3969");
-      `}</Script>
     </html>
   );
 }

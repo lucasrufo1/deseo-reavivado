@@ -92,8 +92,8 @@ function Post({
         >
           <Bookmark
             className="h-6 w-6 transition-colors"
-            style={{ color: hydrated && saved ? "#F2B705" : undefined }}
-            fill={hydrated && saved ? "#F2B705" : "none"}
+            style={{ color: hydrated && saved ? "var(--brand-primary)" : undefined }}
+            fill={hydrated && saved ? "var(--brand-primary)" : "none"}
           />
         </button>
       </div>
@@ -106,20 +106,20 @@ function Post({
   );
 }
 
-const postText = `¡Bienvenida a tu nuevo superpoder! 🎉
+const postText = `¡Bienvenida a este nuevo capítulo! 🎉
 
-Me emociona mucho que estés aquí. Tomar esta decisión ya dice mucho de ti como mamá o papá, y estoy muy feliz de acompañarte en este camino.
+Me emociona mucho que estés aquí. Tomar esta decisión ya dice mucho de ti como prometida, y estoy muy feliz de acompañarte en este camino de la espera al altar.
 
-Aquí dentro vas a encontrar las frases, la metodología y todos los materiales de apoyo. Pero no sientas que tienes que consumir todo de una vez ni aplicar todo al mismo tiempo. Ve a tu ritmo. Con 5 o 10 minutos al día ya empiezas a notar la diferencia, y cada pequeño cambio cuenta. No hay prisa. 💛
+Aquí dentro vas a encontrar la guía completa, la metodología y todos los materiales de apoyo para vivir esta etapa con calma y claridad. No sientas que tienes que consumir todo de una vez. Ve a tu ritmo: cada página que recorras te va preparando, paso a paso, para el día más importante de tu vida. No hay prisa. 💛
 
-Cuando notes la primera diferencia en tu hijo, cuéntamelo. Esos momentos son exactamente la razón por la que hago esto. ¡Nos vemos adentro!`;
+Cuando sientas que algo cambió en ti durante este proceso, cuéntamelo. Esos momentos son exactamente la razón por la que hago esto. ¡Nos vemos adentro!`;
 
 export default function NewsPage() {
   return (
     <div className="flex flex-col gap-4">
       <Post
         id="post-1"
-        authorName="Selene Montiel"
+        authorName="Diana Montellano"
         authorImage="/images/profile.webp"
         contentImage="/images/family.webp"
         text={postText}

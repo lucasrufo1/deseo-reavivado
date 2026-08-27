@@ -28,16 +28,19 @@ export interface ProductConfig {
   themeColor: string;
   /** PWA splash/background color. */
   backgroundColor: string;
+  /** Support contact shown in Profile and the side menu. */
+  supportEmail: string;
 }
 
 export const productConfig: ProductConfig = {
-  appName: "Lenguaje de la Obediencia",
-  appShortName: "Lenguaje",
-  description: "Tu plataforma de productos digitales",
-  primaryColor: "#F2B705",
-  accentColor: "#000000",
+  appName: "Guía de la Prometida",
+  appShortName: "La Prometida",
+  description: "De la espera al altar",
+  primaryColor: "#8C1D3A",
+  accentColor: "#FFFFFF",
   logoUrl: "/icons/logo.webp",
   bannerUrl: "/images/banner.webp",
-  themeColor: "#000000",
+  themeColor: "#480818",
   backgroundColor: "#ffffff",
+  supportEmail: "soporte@laprometida.online",
 };

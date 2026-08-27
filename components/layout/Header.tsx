@@ -18,10 +18,9 @@ export function Header({ onMenuClick }: HeaderProps) {
       <button
         onClick={onMenuClick}
         aria-label="Abrir menú"
-        className="flex h-8 w-8 items-center justify-center rounded-sm"
-        style={{ backgroundColor: "color-mix(in srgb, #F2B705 15%, transparent)" }}
+        className="flex h-8 w-8 items-center justify-center rounded-sm bg-primary-soft"
       >
-        <Menu className="h-6 w-6" style={{ color: "#B38600" }} aria-hidden="true" />
+        <Menu className="h-6 w-6 text-primary" aria-hidden="true" />
       </button>
     </header>
   );

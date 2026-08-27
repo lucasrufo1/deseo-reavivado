@@ -5,9 +5,8 @@ import { useRouter } from "next/navigation";
 import { LogOut, HeadphonesIcon, Copy, Check, X } from "lucide-react";
 
 import { useSession } from "@/lib/session";
+import { productConfig } from "@/config/product";
 import { Button } from "@/components/ui/button";
-
-const SUPPORT_EMAIL = "contacto@lenguajeobediencia.online";
 
 export default function ProfilePage() {
   const router = useRouter();
@@ -22,7 +21,7 @@ export default function ProfilePage() {
   }
 
   async function handleCopy() {
-    await navigator.clipboard.writeText(SUPPORT_EMAIL);
+    await navigator.clipboard.writeText(productConfig.supportEmail);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }
@@ -80,12 +79,9 @@ export default function ProfilePage() {
               ¿Tienes alguna duda o problema? Escríbenos al correo y te responderemos a la brevedad.
             </p>
 
-            <div
-              className="flex items-center justify-between rounded-xl px-4 py-3"
-              style={{ backgroundColor: "color-mix(in srgb, #F2B705 12%, transparent)" }}
-            >
-              <span className="text-sm font-medium" style={{ color: "#B38600" }}>
-                {SUPPORT_EMAIL}
+            <div className="flex items-center justify-between rounded-xl bg-primary-soft px-4 py-3">
+              <span className="text-sm font-medium text-primary">
+                {productConfig.supportEmail}
               </span>
               <button
                 onClick={handleCopy}
@@ -94,7 +90,7 @@ export default function ProfilePage() {
               >
                 {copied
                   ? <Check className="h-4 w-4 text-green-500" />
-                  : <Copy className="h-4 w-4" style={{ color: "#B38600" }} />
+                  : <Copy className="h-4 w-4 text-primary" />
                 }
               </button>
             </div>

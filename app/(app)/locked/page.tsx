@@ -5,10 +5,9 @@ export default function LockedPage() {
   return (
     <div className="flex min-h-[calc(100dvh-10rem)] flex-col items-center justify-center px-6 text-center">
       <div
-        className="mb-6 flex h-16 w-16 items-center justify-center rounded-full"
-        style={{ backgroundColor: "color-mix(in srgb, #F2B705 15%, transparent)" }}
+        className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary-soft"
       >
-        <Clock className="h-8 w-8" style={{ color: "#B38600" }} />
+        <Clock className="h-8 w-8 text-primary" />
       </div>
 
       <h1 className="text-xl font-bold">Contenido en actualización</h1>
@@ -18,8 +17,7 @@ export default function LockedPage() {
 
       <Link
         href="/feed"
-        className="mt-8 text-sm font-semibold"
-        style={{ color: "#B38600" }}
+        className="mt-8 text-sm font-semibold text-primary"
       >
         Volver al inicio
       </Link>
