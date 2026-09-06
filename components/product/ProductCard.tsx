@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Lock } from "lucide-react";
+import { Clock } from "lucide-react";
 
 export interface Product {
   id: string;
@@ -8,7 +8,7 @@ export interface Product {
   imageUrl?: string;
   isBonus?: boolean;
   isLocked?: boolean;
-  /** No cover, no link — renders an inert "Em breve" placeholder. */
+  /** No cover, no link — renders an inert "En actualización" placeholder. */
   comingSoon?: boolean;
 }
 
@@ -20,8 +20,8 @@ export function ProductCard({ product }: { product: Product }) {
         className="flex cursor-not-allowed flex-col overflow-hidden rounded-xl border border-border bg-card text-card-foreground opacity-60"
       >
         <div className="flex aspect-square w-full flex-col items-center justify-center gap-2 bg-muted text-muted-foreground">
-          <Lock className="h-6 w-6" aria-hidden="true" />
-          <span className="text-sm font-semibold">Em breve</span>
+          <Clock className="h-6 w-6" aria-hidden="true" />
+          <span className="text-sm font-semibold">En actualización</span>
         </div>
         <div className="p-3">
           <h3 className="line-clamp-2 text-sm font-semibold">{product.name}</h3>
