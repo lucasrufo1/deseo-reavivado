@@ -5,10 +5,11 @@ import type { Product } from "@/components/product/ProductCard";
 
 const seccion1: Product[] = [
   { id: "1", name: "Guia Completo", imageUrl: "/icons/logo.webp" },
-  { id: "2", name: "Bónus #1", isBonus: true, comingSoon: true },
-  { id: "3", name: "Bónus #2", isBonus: true, comingSoon: true },
-  { id: "4", name: "Bónus #3", isBonus: true, comingSoon: true },
-  { id: "5", name: "Bónus #4", isBonus: true, comingSoon: true },
+  { id: "2", name: "Bónus", isBonus: true, comingSoon: true },
+];
+
+const seccion2: Product[] = [
+  { id: "6", name: "Guia Completo", imageUrl: "/images/sosteniendo-la-promesa.webp" },
 ];
 
 function SectionDivider({ title }: { title: string }) {
@@ -31,6 +32,11 @@ export default function FeedPage() {
       <section className="flex flex-col gap-4">
         <SectionDivider title={productConfig.appName} />
         <ProductGrid products={seccion1} />
+      </section>
+
+      <section className="flex flex-col gap-4">
+        <SectionDivider title="Sosteniendo la Promesa" />
+        <ProductGrid products={seccion2} />
       </section>
     </div>
   );

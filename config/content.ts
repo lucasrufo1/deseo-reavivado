@@ -4,8 +4,10 @@
  */
 export const contentUrls: Record<string, string> = {
   "1": "https://gamma.app/embed/ep9s5l1udjpva9u",
+  "6": "https://sosteniendo-la-promesa-wxibyka.gamma.site/",
 };
 
 export const contentPdfs: Record<string, string> = {
   "1": "/docs/Guia-de-la-Prometida-De-la-Espera-al-Altar.pdf",
+  "6": "/docs/Sosteniendo-la-Promesa.pdf",
 };
