@@ -16,6 +16,10 @@ const seccion2: Product[] = [
   { id: "6", name: "Guia Completo", imageUrl: "/images/sosteniendo-la-promesa.webp" },
 ];
 
+const seccion3: Product[] = [
+  { id: "8", name: "Guia Completo", imageUrl: "/images/noviazgo-intencional.webp" },
+];
+
 function SectionDivider({ title }: { title: string }) {
   return (
     <div className="flex items-center gap-3">
@@ -41,6 +45,11 @@ export default function FeedPage() {
       <section className="flex flex-col gap-4">
         <SectionDivider title="Sosteniendo la Promesa" />
         <ProductGrid products={seccion2} />
+      </section>
+
+      <section className="flex flex-col gap-4">
+        <SectionDivider title="Noviazgo Intencional" />
+        <ProductGrid products={seccion3} />
       </section>
     </div>
   );

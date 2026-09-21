@@ -10,6 +10,7 @@ export const contentUrls: Record<string, string> = {
   "5": "https://gamma.app/embed/89b0y7ekivpu1ts",
   "6": "https://sosteniendo-la-promesa-wxibyka.gamma.site/",
   "7": "https://gamma.app/embed/8a851mscxbpyt29",
+  "8": "https://noviazgo-intencional-cgj7mch.gamma.site/",
 };
 
 export const contentPdfs: Record<string, string> = {
