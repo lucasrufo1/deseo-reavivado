@@ -21,4 +21,5 @@ export const contentPdfs: Record<string, string> = {
   "5": "/docs/Diagnostico-de-la-Promesa.pdf",
   "6": "/docs/Sosteniendo-la-Promesa.pdf",
   "7": "/docs/Lo-Que-El-Dice-y-Lo-Que-Realmente-Busca.pdf",
+  "8": "/docs/Noviazgo-Intencional.pdf",
 };
