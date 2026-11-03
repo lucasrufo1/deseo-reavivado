@@ -20,8 +20,10 @@ export interface ProductConfig {
   primaryColor: string;
   /** Brand accent / "on primary" color (text/icons placed over primary). */
   accentColor: string;
-  /** Path to the product logo (place the file under /public). */
+  /** Path to the full logo (mark + name, transparent). Shown on the login screen. */
   logoUrl: string;
+  /** Path to the isotype only (mark without name, transparent). Shown in the app header. */
+  iconUrl: string;
   /** Path to the feed banner image (place the file under /public). */
   bannerUrl: string;
   /** PWA theme color (browser UI / status bar). */
@@ -33,14 +35,18 @@ export interface ProductConfig {
 }
 
 export const productConfig: ProductConfig = {
-  appName: "Guía de la Prometida",
-  appShortName: "La Prometida",
-  description: "De la espera al altar",
-  primaryColor: "#8C1D3A",
+  appName: "Método Deseo Reavivado",
+  appShortName: "Deseo Reavivado",
+  // TODO: replace with the final one-line description of the product.
+  description: "Método Deseo Reavivado",
+  primaryColor: "#C8063F",
   accentColor: "#FFFFFF",
   logoUrl: "/icons/logo.webp",
+  iconUrl: "/icons/icon.webp",
+  // TODO: banner is still the previous product's artwork — replace with the new one.
   bannerUrl: "/images/banner.webp",
-  themeColor: "#480818",
+  themeColor: "#6E0F1C",
   backgroundColor: "#ffffff",
-  supportEmail: "soporte@laprometida.online",
+  // TODO: placeholder — replace with the real support address.
+  supportEmail: "soporte@example.com",
 };

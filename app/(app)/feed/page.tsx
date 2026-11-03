@@ -3,21 +3,19 @@ import { Banner } from "@/components/product/Banner";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import type { Product } from "@/components/product/ProductCard";
 
+// Each product with content must have its id registered in config/content.ts.
+// Bonuses are `isLocked`: the card shows the "En actualización" tag and opens /locked.
+// TODO: replace the placeholder bonus names ("Bono 1", "Bono 2") and add their covers.
 const seccion1: Product[] = [
-  { id: "1", name: "Guia Completo", imageUrl: "/icons/logo.webp" },
-  { id: "2", name: "Tu Primera Cita con Intención", imageUrl: "/images/guia-primera-cita.webp", isBonus: true },
-  { id: "3", name: "Oración que Declara", imageUrl: "/images/oracion-futuro-esposo.webp", isBonus: true },
-  { id: "4", name: "Tu Presencia Online, Tu Posicionamiento Real", imageUrl: "/images/del-feed-al-altar.webp", isBonus: true },
-  { id: "5", name: "Diagnóstico de la Promesa", imageUrl: "/images/diagnostico-de-la-promesa.webp", isBonus: true },
-  { id: "7", name: "Lo Que Él Dice y Lo Que Realmente Busca", imageUrl: "/images/mente-masculina.webp", isBonus: true },
+  { id: "1", name: "Método", imageUrl: "/images/mdr-cover.webp" },
+  { id: "3", name: "Bono 1", isBonus: true, isLocked: true },
+  { id: "4", name: "Bono 2", isBonus: true, isLocked: true },
 ];
 
 const seccion2: Product[] = [
-  { id: "6", name: "Guia Completo", imageUrl: "/images/sosteniendo-la-promesa.webp" },
-];
-
-const seccion3: Product[] = [
-  { id: "8", name: "Guia Completo", imageUrl: "/images/noviazgo-intencional.webp" },
+  { id: "2", name: "Protocolo", imageUrl: "/images/pd7-cover.webp" },
+  { id: "5", name: "Bono 1", isBonus: true, isLocked: true },
+  { id: "6", name: "Bono 2", isBonus: true, isLocked: true },
 ];
 
 function SectionDivider({ title }: { title: string }) {
@@ -43,13 +41,8 @@ export default function FeedPage() {
       </section>
 
       <section className="flex flex-col gap-4">
-        <SectionDivider title="Sosteniendo la Promesa" />
+        <SectionDivider title="Protocolo Desbloqueo de 7 Días" />
         <ProductGrid products={seccion2} />
-      </section>
-
-      <section className="flex flex-col gap-4">
-        <SectionDivider title="Noviazgo Intencional" />
-        <ProductGrid products={seccion3} />
       </section>
     </div>
   );

@@ -3,7 +3,7 @@
 import { Menu } from "lucide-react";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { productConfig } from "@/config/product";
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -13,7 +13,7 @@ interface HeaderProps {
 export function Header({ onMenuClick }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 flex h-14 items-center justify-between border-b border-border bg-background/95 px-4 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <Image src="/icons/icon.webp" alt="Logo" width={46} height={46} className="rounded-lg" priority />
+      <Image src={productConfig.iconUrl} alt={productConfig.appName} width={46} height={46} priority />
 
       <button
         onClick={onMenuClick}

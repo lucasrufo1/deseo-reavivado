@@ -61,7 +61,7 @@ function Post({
       {contentImage && (
         <div className="px-4">
           <div className="relative w-full overflow-hidden rounded-xl" style={{ aspectRatio: "4/3" }}>
-            <Image src={contentImage} alt="" fill sizes="(max-width: 672px) calc(100vw - 2rem), 640px" className="object-cover" priority />
+            <Image src={contentImage} alt="" fill sizes="(max-width: 672px) calc(100vw - 2rem), 640px" className="object-cover object-top" priority />
           </div>
         </div>
       )}
@@ -100,28 +100,49 @@ function Post({
 
       {/* Text */}
       <div className="px-4 pb-4 pt-2">
-        <p className="text-sm leading-relaxed text-foreground whitespace-pre-line">{text}</p>
+        <p className="text-sm leading-relaxed text-foreground whitespace-pre-line"><RichText text={text} /></p>
       </div>
     </article>
   );
 }
 
-const postText = `¡Bienvenida a este nuevo capítulo! 🎉
+// Text between ** ** is rendered in bold.
+const postText = `**¡Bienvenida a este nuevo comienzo! ❤️**
 
-Me emociona mucho que estés aquí. Tomar esta decisión ya dice mucho de ti como prometida, y estoy muy feliz de acompañarte en este camino de la espera al altar.
+¡Qué alegría tenerte aquí! Me emociona mucho saber que decidiste dar este paso, porque sé lo difícil que puede ser sentir que el hombre que amas ya no te mira ni te busca como antes.
 
-Aquí dentro vas a encontrar la guía completa, la metodología y todos los materiales de apoyo para vivir esta etapa con calma y claridad. No sientas que tienes que consumir todo de una vez. Ve a tu ritmo: cada página que recorras te va preparando, paso a paso, para el día más importante de tu vida. No hay prisa. 💛
+Pero quiero que sepas algo: todavía hay mucho que puedes hacer para recuperar esa conexión tan bonita que alguna vez tuvieron. Y me hace muy feliz poder acompañarte en este camino. 💕
 
-Cuando sientas que algo cambió en ti durante este proceso, cuéntamelo. Esos momentos son exactamente la razón por la que hago esto. ¡Nos vemos adentro!`;
+Aquí dentro vas a encontrar las 21 Dosis de Adicción Emocional del Método Deseo Reavivado, junto con las explicaciones y los materiales que preparé para ayudarte a ponerlas en práctica en tu relación.
+
+Mi consejo es que vayas a tu ritmo. No necesitas aprenderlo todo en un solo día. Lee cada paso con calma, entiende cómo aplicarlo y empieza poco a poco. A veces, los pequeños detalles son los que abren la puerta a los cambios más bonitos.
+
+Y cuando empieces a notar esas primeras miradas, un mensaje inesperado o un gesto de cariño que hacía tiempo no recibías, ¡me encantará que me lo cuentes! Porque saber que otras mujeres vuelven a sentirse amadas y valoradas es lo que le da sentido a todo esto.
+
+**Te mando un abrazo enorme. ¡Nos vemos adentro! ❤️**
+
+Con cariño,
+**Lidia Olvera**`;
+
+/** Renders `**bold**` segments; everything else stays plain text. */
+function RichText({ text }: { text: string }) {
+  return (
+    <>
+      {text.split("**").map((part, i) =>
+        i % 2 === 1 ? <strong key={i} className="font-semibold">{part}</strong> : part
+      )}
+    </>
+  );
+}
 
 export default function NewsPage() {
   return (
     <div className="flex flex-col gap-4">
       <Post
         id="post-1"
-        authorName="Diana Montellano"
+        authorName="Lidia Olvera"
         authorImage="/images/profile.webp"
-        contentImage="/images/family.webp"
+        contentImage="/images/couple.webp"
         text={postText}
       />
     </div>

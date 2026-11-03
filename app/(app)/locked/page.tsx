@@ -12,7 +12,7 @@ export default function LockedPage() {
 
       <h1 className="text-xl font-bold">Contenido en actualización</h1>
       <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-        Este material está siendo actualizado. Estará disponible en un plazo de <strong>24 horas</strong>.
+        Este contenido está siendo actualizado y está temporalmente no disponible.
       </p>
 
       <Link

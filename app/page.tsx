@@ -4,11 +4,10 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import { useSession } from "@/lib/session";
-import { Logo } from "@/components/layout/Logo";
 
 /**
  * Entry route: waits for the persisted session to hydrate, then redirects to
- * /feed when authenticated or /login otherwise. Shows the logo while deciding.
+ * /feed when authenticated or /login otherwise. Shows the loading spinner while deciding.
  */
 export default function RootPage() {
   const router = useRouter();
@@ -22,7 +21,7 @@ export default function RootPage() {
 
   return (
     <main className="flex min-h-dvh items-center justify-center">
-      <Logo className="h-20 w-20 animate-fade-in" />
+      <div className="h-10 w-10 animate-spin rounded-full border-4 border-muted border-t-primary" />
     </main>
   );
 }

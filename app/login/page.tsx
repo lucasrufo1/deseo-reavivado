@@ -25,7 +25,7 @@ export default function LoginPage() {
     e.preventDefault();
 
     if (!isValidEmail(email)) {
-      setError("Digite um e-mail válido.");
+      setError("Ingresa un correo electrónico válido.");
       return;
     }
 
@@ -59,7 +59,7 @@ export default function LoginPage() {
           </button>
         )}
 
-        <Image src="/icons/logo.webp" alt="Logo" width={90} height={90} className="rounded-2xl" />
+        <Image src={productConfig.logoUrl} alt={productConfig.appName} width={160} height={160} priority />
 
         <h1 className="mt-6 text-2xl font-bold">{productConfig.appName}</h1>
         <p className="mt-1 text-sm text-muted-foreground">Accede a tu cuenta</p>

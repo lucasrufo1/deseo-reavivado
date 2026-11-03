@@ -40,9 +40,10 @@ export default function ContentPage() {
             href={pdfUrl}
             download
             aria-label="Descargar PDF"
-            className="flex h-8 w-8 items-center justify-center rounded-sm bg-primary-soft"
+            className="flex h-8 items-center gap-1.5 rounded-md bg-primary-soft px-3 text-sm font-semibold text-primary"
           >
-            <Download className="h-5 w-5 text-primary" aria-hidden="true" />
+            <Download className="h-4 w-4" aria-hidden="true" />
+            PDF
           </a>
         )}
       </div>

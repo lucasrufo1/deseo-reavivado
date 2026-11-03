@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Clock } from "lucide-react";
+import { Clock, Gift, RefreshCw } from "lucide-react";
 
 export interface Product {
   id: string;
@@ -43,9 +43,36 @@ export function ProductCard({ product }: { product: Product }) {
             loading="lazy"
           />
         )}
+        {product.isLocked && (
+          <div
+            className="absolute inset-0 flex flex-col items-center justify-center gap-3 overflow-hidden pb-6 text-white"
+            style={{
+              background:
+                "radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--brand-primary) 70%, white) 0%, transparent 55%), linear-gradient(150deg, var(--brand-primary), color-mix(in srgb, var(--brand-primary) 45%, black))",
+            }}
+          >
+            <Gift
+              className="absolute -bottom-8 -right-8 h-24 w-24 -rotate-12 text-white/10"
+              strokeWidth={1.25}
+              aria-hidden="true"
+            />
+            <span className="relative flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur-sm">
+              <RefreshCw className="h-5 w-5" aria-hidden="true" />
+            </span>
+            <span className="relative text-xs font-medium tracking-wide text-white/90">
+              En actualización
+            </span>
+          </div>
+        )}
         {product.isBonus && (
-          <span className="absolute right-2 top-2 rounded-full bg-green-500/20 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-green-600 backdrop-blur-sm">
-            Bónus
+          <span
+            className={
+              product.isLocked
+                ? "absolute right-2 top-2 rounded-md border border-white/30 bg-black/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur-sm"
+                : "absolute right-2 top-2 rounded-full bg-green-500/20 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-green-600 backdrop-blur-sm"
+            }
+          >
+            Bono
           </span>
         )}
       </div>
